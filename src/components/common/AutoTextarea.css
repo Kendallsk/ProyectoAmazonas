@@ -1,0 +1,38 @@
+/* Campo de texto universal: crece con el contenido, nunca muestra scroll interno */
+.auto-textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #1a1a1a;
+  background: transparent;
+  color: #1a1a1a;
+  font-family: inherit;
+  font-size: var(--fs-campo);
+  line-height: var(--lh-campo);
+  padding: 6px 4px;
+  resize: none;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  field-sizing: content;
+  transition: border-color 0.3s ease;
+}
+
+.auto-textarea:focus {
+  outline: none;
+  border-bottom-color: #e91e63;
+}
+
+.auto-textarea::placeholder {
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+@media print {
+  .auto-textarea {
+    border-bottom: 1px solid #1a1a1a !important;
+    overflow: hidden !important;
+  }
+}

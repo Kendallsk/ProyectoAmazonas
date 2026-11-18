@@ -1,0 +1,107 @@
+/* ============================================ */
+/* TOKENS DE DISEÑO GLOBALES                     */
+/* Toda la ficha (y el PDF) usa estas medidas.   */
+/* ============================================ */
+
+:root {
+  --font-family: 'Segoe UI', Arial, sans-serif;
+
+  /* Escala tipográfica: un solo tamaño por rol */
+  --fs-encabezado: 38px; /* título de la ficha */
+  --fs-titulo: 18px; /* títulos de sección */
+  --fs-subtitulo: 15px; /* subtítulos internos */
+  --fs-etiqueta: 14px; /* etiquetas y preguntas */
+  --fs-lista: 14px; /* radios, checkboxes y opciones */
+  --fs-campo: 16px; /* texto escrito en los campos */
+
+  --lh-campo: 1.6;
+  --color-tinta: #1a1a1a;
+  --color-suave: #4a4a4a;
+}
+
+/* Escala para impresión / PDF: misma jerarquía, todo más compacto */
+@media print {
+  :root {
+    --fs-encabezado: 22px;
+    --fs-titulo: 13px;
+    --fs-subtitulo: 12px;
+    --fs-etiqueta: 11px;
+    --fs-lista: 11px;
+    --fs-campo: 11px;
+    --lh-campo: 1.35;
+  }
+}
+
+/* ============================================ */
+/* BASE                                         */
+/* ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--fs-campo);
+  color: var(--color-tinta);
+  background: #f0f2f5;
+}
+
+/* Una sola familia y un solo cuerpo para todo texto escrito */
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: var(--fs-campo);
+  color: var(--color-tinta);
+}
+
+/* Una sola escala para todas las etiquetas */
+label {
+  font-size: var(--fs-etiqueta);
+  font-weight: 500;
+}
+
+small {
+  font-size: var(--fs-etiqueta);
+}
+
+::placeholder {
+  font-size: var(--fs-campo);
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+/* ============================================ */
+/* TÍTULOS DE SECCIÓN (definición única)        */
+/* ============================================ */
+
+.section-title {
+  font-size: var(--fs-titulo);
+  font-weight: 600;
+  color: var(--color-tinta);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.subsection-title {
+  font-size: var(--fs-subtitulo);
+  font-weight: 600;
+  color: var(--color-tinta);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================ */
+/* IMPRESIÓN                                    */
+/* ============================================ */
+
+@media print {
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

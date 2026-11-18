@@ -1,0 +1,226 @@
+.cuidado-cabello {
+  padding: 30px 35px;
+  background: white;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Grid de 2 columnas */
+.cuidado-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Columna Izquierda */
+.cuidado-columna-izquierda {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.cuidado-seccion {
+  display: flex;
+  flex-direction: column;
+}
+
+.cuidado-opciones-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 5px;
+}
+
+.cuidado-producto-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cuidado-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #1a1a1a;
+  font-size: var(--fs-campo);
+  padding: 6px 4px;
+  background: transparent;
+  transition: all 0.3s ease;
+  color: #1a1a1a;
+}
+
+.cuidado-input:focus {
+  outline: none;
+  border-bottom-color: #e91e63;
+}
+
+.cuidado-input::placeholder {
+  color: #aaa;
+  font-size: var(--fs-campo);
+  letter-spacing: 1px;
+}
+
+/* Columna Derecha: Medida del cabello */
+.cuidado-columna-derecha {
+  display: flex;
+  flex-direction: column;
+}
+
+.cuidado-medida-container {
+  display: flex;
+  gap: 20px;
+  align-items: stretch;
+  height: 100%;
+}
+
+/* Opciones en columna (izquierda) - MÁS DELGADAS */
+.cuidado-medida-opciones-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  flex: 1;
+}
+
+.cuidado-medida-option-vertical {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-lista);
+  color: #1a1a1a;
+  cursor: pointer;
+  user-select: none;
+  padding: 6px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  background: white;
+  max-width: 140px;
+  width: fit-content;
+}
+
+.cuidado-medida-option-vertical:hover {
+  border-color: #e91e63;
+  background: #fce4ec;
+}
+
+.cuidado-medida-option-vertical input[type="radio"] {
+  display: none;
+}
+
+.cuidado-medida-option-vertical:has(input:checked) {
+  border-color: #e91e63;
+  background: #e91e63;
+  color: white;
+}
+
+/* Imagen vertical (derecha) - MÁS ANCHA */
+.cuidado-medida-imagen-vertical {
+  flex: 1;
+  min-height: 220px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+}
+
+.cuidado-imagen-vertical {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cuidado-imagen-placeholder-vertical {
+  color: #999;
+  font-size: var(--fs-etiqueta);
+  text-align: center;
+  padding: 10px;
+}
+
+/* Estilos generales para radios */
+.cuidado-radio {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-lista);
+  color: #1a1a1a;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cuidado-radio input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #e91e63;
+}
+
+.cuidado-radio:hover {
+  color: #e91e63;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .cuidado-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .cuidado-medida-imagen-vertical {
+    min-height: 180px;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cuidado-cabello {
+    padding: 20px 25px;
+  }
+
+  .cuidado-grid {
+    gap: 25px;
+  }
+
+  .cuidado-opciones-vertical {
+    gap: 6px;
+  }
+
+  .cuidado-medida-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cuidado-medida-opciones-vertical {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .cuidado-medida-option-vertical {
+    max-width: none;
+    width: auto;
+    padding: 6px 16px;
+  }
+
+  .cuidado-medida-imagen-vertical {
+    width: 100%;
+    max-width: 250px;
+    min-height: 160px;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .cuidado-medida-option-vertical {
+    padding: 4px 12px;
+  }
+
+  .cuidado-medida-imagen-vertical {
+    max-width: 200px;
+    min-height: 140px;
+  }
+}

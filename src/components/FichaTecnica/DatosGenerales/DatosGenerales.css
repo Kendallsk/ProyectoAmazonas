@@ -1,0 +1,32 @@
+.datos-generales {
+  padding: 30px 50px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.datos-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.datos-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.datos-full-width {
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .datos-generales {
+    padding: 20px 25px;
+  }
+
+  .datos-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

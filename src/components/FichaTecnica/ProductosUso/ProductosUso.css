@@ -1,0 +1,202 @@
+.productos-uso {
+  padding: 30px 35px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.productos-uso-header {
+  margin-bottom: 16px;
+}
+
+.productos-uso-track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  overflow: visible;
+  padding-bottom: 8px;
+}
+
+.producto-card,
+.producto-add-card {
+  min-height: 360px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  padding: 16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.producto-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.producto-remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.producto-preview-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  background: #f3f4f6;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.producto-preview-area img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.producto-empty-state {
+  color: #6b7280;
+  font-size: var(--fs-etiqueta);
+}
+
+.producto-name-input {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: var(--fs-campo);
+  width: 100%;
+  box-sizing: border-box;
+  background: white;
+  line-height: 1.4;
+}
+
+.producto-name-input:focus {
+  border-color: #e91e63;
+}
+
+.producto-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.producto-modal-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.producto-modal-field span,
+.producto-modal-field > label {
+  font-size: var(--fs-etiqueta);
+  font-weight: 600;
+}
+
+.producto-modal-field input,
+.producto-modal-field .auto-textarea {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 8px 10px;
+  background: white;
+}
+
+.producto-modal-field .auto-textarea:focus {
+  border-color: #e91e63;
+}
+
+.producto-add-card {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.producto-upload-btn {
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+  color: white;
+}
+
+.producto-add-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  color: #e91e63;
+  background: #fff5f8;
+  border: 2px dashed #f2a0bb;
+  font-size: var(--fs-subtitulo);
+}
+
+.producto-add-card span {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.producto-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.producto-modal {
+  width: min(420px, 100%);
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.producto-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.producto-modal-close {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .productos-uso-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .productos-uso-track {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .productos-uso {
+    padding: 20px 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .productos-uso-track {
+    grid-template-columns: 1fr;
+  }
+}

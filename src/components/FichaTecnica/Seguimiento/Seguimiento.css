@@ -1,0 +1,51 @@
+.seguimiento {
+  padding: 30px 35px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.seguimiento-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.seguimiento-textarea {
+  width: 100%;
+  flex: 1;
+  min-height: 350px;
+  border: none;
+  border-bottom: 2px solid #1a1a1a;
+  font-size: var(--fs-campo);
+  padding: 10px 4px;
+  resize: none;
+  overflow: hidden;
+  font-family: inherit;
+  background: transparent;
+  transition: all 0.3s ease;
+  color: #1a1a1a;
+  line-height: 2.2;
+  box-sizing: border-box;
+}
+
+.seguimiento-textarea:focus {
+  outline: none;
+  border-bottom-color: #e91e63;
+}
+
+.seguimiento-textarea::placeholder {
+  color: #aaa;
+  font-size: var(--fs-campo);
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .seguimiento {
+    padding: 20px 25px;
+  }
+
+  .seguimiento-textarea {
+    min-height: 200px;
+  }
+}

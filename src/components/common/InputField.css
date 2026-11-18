@@ -1,0 +1,56 @@
+.input-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-field-label {
+  font-size: var(--fs-etiqueta);
+  font-weight: 500;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.input-field-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #1a1a1a;
+  font-size: var(--fs-campo);
+  padding: 8px 4px;
+  background: transparent;
+  transition: all 0.3s ease;
+  color: #1a1a1a;
+}
+
+.input-field-input:focus {
+  outline: none;
+  border-bottom-color: #e91e63;
+}
+
+input.input-field-input:focus {
+  transform: scale(1.01);
+}
+
+textarea.input-field-input {
+  line-height: var(--lh-campo);
+}
+
+.input-field-input::placeholder {
+  color: #aaa;
+  letter-spacing: 1px;
+}
+
+.input-field-input[type="date"] {
+  color: #1a1a1a;
+}
+
+.input-field-input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.input-field-input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  background: #f0f0f0;
+}

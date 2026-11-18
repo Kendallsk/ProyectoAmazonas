@@ -1,0 +1,656 @@
+.ficha-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #f0f2f5;
+}
+
+.ficha-card {
+  max-width: 1200px;
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.ficha-card textarea,
+.ficha-card .seguimiento-textarea,
+.ficha-card .cronograma-textarea,
+.ficha-card .caracteristicas-textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+.ficha-header {
+  text-align: center;
+  padding: 35px 20px 30px;
+  background: linear-gradient(to bottom, #ffffff, #fafafa);
+  border-bottom: 3px solid #1a1a1a;
+}
+
+.ficha-title {
+  font-size: var(--fs-encabezado);
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* Barra de estado: guardado automático + acción de nueva ficha */
+.ficha-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.ficha-save {
+  font-size: var(--fs-etiqueta);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #4a4a4a;
+  background: #f1f3f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+  padding: 5px 14px;
+}
+
+.ficha-save--ok {
+  color: #1b7f4b;
+  background: #e9f7ef;
+  border-color: #b7e4c7;
+}
+
+.ficha-save--guardando {
+  color: #8a6d1a;
+  background: #fff8e1;
+  border-color: #f5e0a3;
+}
+
+.ficha-save--parcial {
+  color: #9a5b00;
+  background: #fff3e0;
+  border-color: #ffd8a8;
+}
+
+.ficha-save--error {
+  color: #b3261e;
+  background: #fdecea;
+  border-color: #f5c6c2;
+}
+
+.ficha-toolbar-btn {
+  font-size: var(--fs-etiqueta);
+  font-weight: 600;
+  font-family: inherit;
+  color: #1a1a1a;
+  background: white;
+  border: 1px solid #1a1a1a;
+  border-radius: 999px;
+  padding: 5px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ficha-toolbar-btn:hover {
+  background: #1a1a1a;
+  color: white;
+}
+
+/* Diagnóstico y Problemas en 2 columnas */
+.ficha-diagnostico-problemas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.ficha-diagnostico-problemas > div {
+  padding: 30px 35px;
+  border-bottom: none;
+}
+
+.ficha-diagnostico-problemas > div:first-child {
+  border-right: 2px solid #e0e0e0;
+}
+
+/* Historial + Especifique + Seguimiento */
+.ficha-historial-seguimiento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.ficha-historial-especifique {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-right: 2px solid #e0e0e0;
+}
+
+.ficha-historial-especifique > div {
+  padding: 30px 35px;
+  border-bottom: none;
+  border-right: none;
+}
+
+.ficha-historial-seguimiento > div:last-child {
+  padding: 30px 35px;
+}
+
+/* ============================================ */
+/* RESPONSIVE PARA PANTALLAS PEQUEÑAS */
+/* ============================================ */
+
+@media (max-width: 992px) {
+  .ficha-diagnostico-problemas {
+    grid-template-columns: 1fr;
+  }
+
+  .ficha-diagnostico-problemas > div:first-child {
+    border-right: none;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .ficha-historial-seguimiento {
+    grid-template-columns: 1fr;
+  }
+
+  .ficha-historial-especifique {
+    border-right: none;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .tipo-fila {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .ficha-container {
+    padding: 10px;
+  }
+
+  .ficha-card {
+    border-radius: 8px;
+  }
+
+  .ficha-title {
+    font-size: 28px;
+  }
+
+  .ficha-diagnostico-problemas > div,
+  .ficha-historial-especifique > div,
+  .ficha-historial-seguimiento > div:last-child {
+    padding: 20px 25px;
+  }
+
+  .ficha-historial-especifique {
+    grid-template-columns: 1fr;
+  }
+
+  .ficha-diagnostico-problemas,
+  .ficha-historial-seguimiento,
+  .ficha-historial-especifique,
+  .cuidado-grid,
+  .caracteristicas-grid,
+  .tipo-imagen-matriz {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .cronograma-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .tipo-fila {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .ficha-diagnostico-problemas > div:first-child {
+    border-right: none !important;
+    border-bottom: 2px solid #e0e0e0 !important;
+  }
+  
+  .ficha-historial-especifique {
+    border-right: none !important;
+  }
+  
+  .datos-generales,
+  .diagnostico-general,
+  .tipo-cabello,
+  .problemas-identificados,
+  .historial,
+  .especifique,
+  .seguimiento,
+  .cuidado-cabello,
+  .caracteristicas-generales,
+  .cronograma {
+    padding: 20px 25px !important;
+  }
+}
+
+/* ============================================ */
+/* ESTILOS PARA IMPRESIÓN / PDF                 */
+/* ============================================ */
+
+/* Al final de tu FichaTecnica.css */
+
+/* ============================================ */
+/* ESTILOS PARA EXPORTACIÓN A PDF               */
+/* ============================================ */
+
+@page {
+  size: A4 portrait;
+  margin: 8mm;
+}
+
+@media print {
+  .export-pdf-container {
+    display: none !important;
+  }
+
+  .ficha-toolbar {
+    display: none !important;
+  }
+
+  .ficha-container {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+    display: block !important;
+  }
+
+  .ficha-card {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .ficha-header {
+    padding: 8px 10px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .ficha-title {
+  font-size: var(--fs-encabezado) !important;
+    letter-spacing: 2px !important;
+    margin: 0 !important;
+  }
+
+  /* ---- Secciones: paddings reducidos ---- */
+  .datos-generales,
+  .diagnostico-general,
+  .problemas-identificados,
+  .tipo-cabello,
+  .historial,
+  .especifique,
+  .seguimiento,
+  .cuidado-cabello,
+  .caracteristicas-generales,
+  .cronograma,
+  .productos-uso {
+    padding: 10px 14px !important;
+  }
+
+  /* ---- Datos Generales ---- */
+  .datos-columns {
+    gap: 15px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .datos-column {
+    gap: 8px !important;
+  }
+
+  .section-title {
+    margin-bottom: 8px !important;
+  }
+
+  /* ---- Diagnóstico + Problemas: misma página 1 ---- */
+  .ficha-diagnostico-problemas {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+  }
+
+  .ficha-diagnostico-problemas > div {
+    padding: 10px 14px !important;
+  }
+
+  /* ---- TipoCabello ---- */
+  .tipo-fila {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .tipo-imagen-matriz {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    margin-top: 4px !important;
+  }
+
+  .tipo-imagen-placeholder {
+    min-height: 100px !important;
+    max-height: 140px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .matriz-header,
+  .matriz-fila {
+    grid-template-columns: 100px repeat(5, 1fr) !important;
+  }
+
+  .matriz-cell {
+    padding: 3px 2px !important;
+    min-height: 22px !important;
+  }
+
+  .matriz-label {
+    padding-left: 4px !important;
+  }
+
+
+  .tipo-opciones-vertical {
+    gap: 3px !important;
+  }
+
+  .tipo-radio {
+    gap: 3px !important;
+  }
+
+  .tipo-radio input[type="radio"] {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  .opciones-imagen-grid {
+    gap: 4px !important;
+  }
+
+  .tipo-imagen-option {
+    padding: 4px 2px !important;
+  }
+
+  /* ---- CuidadoCabello ---- */
+  .cuidado-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* ---- Historial + Especifique + Seguimiento ---- */
+  .ficha-historial-seguimiento {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0 !important;
+  }
+
+  .ficha-historial-especifique {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    border-right: 1px solid #e0e0e0 !important;
+  }
+
+  .ficha-historial-especifique > div {
+    padding: 10px 12px !important;
+  }
+
+  .ficha-historial-seguimiento > div:last-child {
+    padding: 10px 14px !important;
+  }
+
+  /* ---- Características Generales ---- */
+  .caracteristicas-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .caracteristicas-imagen-box {
+    min-height: 100px !important;
+    max-height: 140px !important;
+  }
+
+  .caracteristicas-campos {
+    gap: 6px !important;
+  }
+
+  /* ---- Seguimiento ---- */
+  .seguimiento-textarea {
+    min-height: 100px !important;
+    padding: 4px !important;
+  }
+
+  /* ---- Especifique ---- */
+  .especifique-container {
+    gap: 8px !important;
+  }
+
+  .especifique-input {
+    padding: 3px !important;
+  }
+
+  /* ---- Historial ---- */
+  .historial-container {
+    gap: 4px !important;
+  }
+
+  .historial-item {
+    padding: 1px 0 !important;
+    gap: 8px !important;
+  }
+
+  .historial-pregunta {
+    min-width: 100px !important;
+  }
+
+  .historial-option {
+    gap: 3px !important;
+  }
+
+  .historial-option input[type="radio"] {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  /* ---- Diagnóstico ---- */
+  .diagnostico-container {
+    gap: 4px !important;
+  }
+
+  .diagnostico-item {
+    gap: 8px !important;
+    padding: 1px 0 !important;
+  }
+
+  .diagnostico-pregunta {
+    min-width: 100px !important;
+  }
+
+  .diagnostico-option {
+    gap: 3px !important;
+  }
+
+  .diagnostico-option input[type="radio"] {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  /* ---- Problemas ---- */
+  .problemas-grid {
+    gap: 2px 10px !important;
+  }
+
+
+
+  .alopecia-section {
+    margin-top: 8px !important;
+    padding: 8px !important;
+  }
+
+  .alopecia-title {
+    margin-bottom: 6px !important;
+  }
+
+
+  .alopecia-field input,
+  .alopecia-field select,
+  .alopecia-field .auto-textarea {
+    padding: 4px 6px !important;
+  }
+
+  /* ---- Productos ---- */
+  .productos-uso {
+    page-break-inside: avoid !important;
+    page-break-before: auto !important;
+  }
+
+  .productos-uso-header {
+    margin-bottom: 6px !important;
+  }
+
+  .productos-uso-track {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .producto-card,
+  .producto-add-card {
+    min-height: auto !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    padding: 8px !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+
+  .producto-preview-area {
+    min-height: 60px !important;
+    border-radius: 6px !important;
+  }
+
+  .producto-preview-area img {
+    width: 90% !important;
+    height: 90% !important;
+  }
+
+  .producto-name-input {
+    padding: 3px 6px !important;
+    border-radius: 4px !important;
+  }
+
+  /* ---- CuidadoCabello imagen ---- */
+  .cuidado-medida-imagen-vertical {
+    min-height: 80px !important;
+    min-width: 100px !important;
+  }
+
+  .cuidado-medida-option-vertical {
+    padding: 3px 8px !important;
+    max-width: 100px !important;
+  }
+
+  .cuidado-producto-inputs {
+    gap: 6px !important;
+  }
+
+  .cuidado-input {
+    padding: 3px !important;
+  }
+
+  .cuidado-columna-izquierda {
+    gap: 8px !important;
+  }
+
+  .subsection-title {
+    margin-bottom: 4px !important;
+  }
+
+  /* ---- Cronograma ---- */
+  .cronograma-grid {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .cronograma-dia {
+    min-height: auto !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+
+  .cronograma-dia-header {
+    padding: 5px 6px !important;
+    border-bottom: 1px solid #f0d0d0 !important;
+  }
+
+
+  .cronograma-textarea {
+    min-height: 60px !important;
+    padding: 5px 6px !important;
+  }
+
+  .cronograma-textarea-unica {
+    min-height: 120px !important;
+  }
+
+  .cronograma-subtitle {
+    margin-bottom: 6px !important;
+  }
+
+  .cronograma-selector {
+    margin-bottom: 8px !important;
+    gap: 10px !important;
+  }
+
+
+  /* ---- Misma tipografía en toda la ficha ---- */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-family: var(--font-family) !important;
+  }
+
+  /* ---- Evitar cortes en secciones ---- */
+  .ficha-header,
+  .datos-generales,
+  .ficha-diagnostico-problemas,
+  .tipo-cabello,
+  .cuidado-cabello,
+  .ficha-historial-seguimiento,
+  .ficha-historial-especifique,
+  .historial,
+  .especifique,
+  .seguimiento,
+  .caracteristicas-generales,
+  .productos-uso,
+  .cronograma,
+  .tipo-fila,
+  .tipo-imagen-matriz,
+  .cuidado-grid,
+  .caracteristicas-grid,
+  .cronograma-grid,
+  .cronograma-dia {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Evitar que el título quede huérfano */
+  .section-title {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+}
